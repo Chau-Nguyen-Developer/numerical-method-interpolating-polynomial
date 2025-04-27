@@ -87,7 +87,7 @@ int main()
     // for(size_t i = 1; vector4.size(); ++i)
     // {
     //     vector5.push_back((vector4[i] - vector4[i -1]) / (vector1[i + 2] - vector1[i -1]));
-    //     std::cout << vector5[i] << std::endl;
+    //    std::cout << vector5[i-1] << std::endl;
     // }
     
     std::cout << "Print out first part";
