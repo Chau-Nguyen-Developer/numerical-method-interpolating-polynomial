@@ -68,16 +68,18 @@ int main()
     std::cout << "This is vector 3" << std::endl;
     for(size_t i = 1; i < vector1.size(); ++i)
     {
-        std::cout << (vector2[i] - vector2[i-1]) / (vector1[i] - vector1[i-1]) << std::endl;
+        vector3.push_back((vector2[i] - vector2[i-1]) / (vector1[i] - vector1[i-1]));
+        std::cout << vector3[i-1] << std::endl;
     }
 
     std::vector<double> vector4;
     std::cout << "This is vector 4" << std::endl;
     std::cout <<"print out"<< std::endl;
-    
+
     for(size_t i = 1; i < vector3.size(); ++i)
     {
-        std::cout << (vector3[i] - vector3[i-1]) / (vector1[i+1] - vector1[i-1]) << std::endl;
+        vector4.push_back((vector3[i] - vector3[i-1]) / (vector1[i+1] - vector1[i-1]));
+        std::cout << vector4[i-1] << std::endl;
     }
 
 
