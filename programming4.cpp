@@ -56,21 +56,30 @@ int main()
     }
 
     //Print out vectors to check. 
-    std::cout << "My Vector1: " << std::endl;
+    std::cout << "x         f[]         f[,]        f[, ,]" << std::endl;
 
-    for(const double& num: vector1)
+    for(size_t i = 0; i < vector1.size(); ++i)
     {
-        std::cout << num << " ";
-    }
-    
-    std::cout <<std::endl;
-    
-    std::cout << "My Vector2: " << std::endl;
+        std::cout << vector1[i] << "            " << vector2[i] << std::endl;
 
-    for(const double& num: vector2)
-    {
-        std::cout << num << " ";
     }
+
+    std::vector<double> vector3;
+    std::cout << "This is vector 3" << std::endl;
+    for(size_t i = 1; i < vector1.size(); ++i)
+    {
+        std::cout << (vector2[i] - vector2[i-1]) / (vector1[i] - vector1[i-1]) << std::endl;
+    }
+
+    std::vector<double> vector4;
+    std::cout << "This is vector 4" << std::endl;
+    std::cout <<"print out"<< std::endl;
+    
+    for(size_t i = 1; i < vector3.size(); ++i)
+    {
+        std::cout << (vector3[i] - vector3[i-1]) / (vector1[i+1] - vector1[i-1]) << std::endl;
+    }
+
 
     return 0;
 
