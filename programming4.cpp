@@ -1,6 +1,6 @@
 //PROGRAMMER: Ngoc Chau Nguyen
 //DATE: 2025-04-23
-//DESCRIPTION: This program is a simple C++ program that prints "Hello, World!" to the console.
+//DESCRIPTION: Placeholder
 //ASSISTANT: CHAT GPT and classmate Jasper Liu
 
 #include <iostream> //do I need it?
@@ -18,6 +18,7 @@ int main()
     std::vector<double> vector1;
     std::vector<double> vector2;
 
+    int count = 0;
 
     if(inputFile.is_open())
     {
@@ -33,6 +34,7 @@ int main()
             while(ss >> number)
             {
                 vector1.push_back(number);
+                ++count;
             }
 
         }
@@ -98,7 +100,33 @@ int main()
     std::cout << "Print out second part." << std::endl;
     std::cout << (vector1[3] - vector1[0]);
 
+    //print out interpolating polynomial
+
+    //cast vector1<double> to vector string
+    std::vector<std::string> vector1String;
+    for (const double& number: vector1)
+    {
+        vector1String.push_back("x - " + std::to_string(number));
+    }
+
+    //print out the vector1String for now.
+    for(const auto& str: vector1String)
+    {
+        std::cout << str << std::endl;
+    }
+
+    //create a vector that has the format (x-value)
+
+    //enum class VectorEnum {vector1=1, vector2=2, vector3 = 3, vector4 = 4, vector5 = 5};
+
     
+    // std::vector<std::vector<double>> vectorList;
+    // // vectorList.push
+
+    // for (int i = 0; i < count; ++i)
+    // {
+
+    // }
 
     return 0;
 
