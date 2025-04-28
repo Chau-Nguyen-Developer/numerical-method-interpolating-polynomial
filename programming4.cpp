@@ -58,7 +58,7 @@ int main()
     }
 
     //Print out vectors to check. 
-    std::cout << "x         f[]         f[,]        f[, ,]" << std::endl;
+    std::cout << "x         f[]         f[,]        f[, ,]      " << std::endl;
 
     for(size_t i = 0; i < vector1.size(); ++i)
     {
@@ -93,13 +93,6 @@ int main()
        std::cout << vector5[i-1] << std::endl;
     }
     
-    std::cout << "Print out first part";
-    std::cout << (vector4[1] - vector4[0]) << std::endl;
-
-    //print out second part
-    std::cout << "Print out second part." << std::endl;
-    std::cout << (vector1[3] - vector1[0]);
-
     //print out interpolating polynomial
 
     //cast vector1<double> to vector string
@@ -151,18 +144,6 @@ int main()
         } 
     }
 
-    //create a vector that has the format (x-value)
-
-    //enum class VectorEnum {vector1=1, vector2=2, vector3 = 3, vector4 = 4, vector5 = 5};
-
-    
-    // std::vector<std::vector<double>> vectorList;
-    // // vectorList.push
-
-    // for (int i = 0; i < count; ++i)
-    // {
-
-    // }
 
     return 0;
 
