@@ -83,13 +83,23 @@ int main()
     }
 
     std::vector<double> vector5;
+    std::cout << "Size of vector 4: " << vector4.size() << std::endl;
     std::cout << "This is vector 5" << std::endl;
-    // for(size_t i = 1; vector4.size(); ++i)
-    // {
-    //     vector5.push_back((vector4[i] - vector4[i -1]) / (vector1[i + 2] - vector1[i -1]));
-    //    std::cout << vector5[i-1] << std::endl;
-    // }
-    std::cout << (vector4[1] - vector4[0]);
+    for(size_t i = 1; i < vector4.size(); ++i)
+    {
+        vector5.push_back((vector4[i] - vector4[i -1]) / (vector1[i + 2] - vector1[i -1]));
+       std::cout << vector5[i-1] << std::endl;
+    }
+    
+    std::cout << "Print out first part";
+    std::cout << (vector4[1] - vector4[0]) << std::endl;
+
+    //print out second part
+    std::cout << "Print out second part." << std::endl;
+    std::cout << (vector1[3] - vector1[0]);
+
+    
+
     return 0;
 
 }
