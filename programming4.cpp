@@ -103,16 +103,48 @@ int main()
     //print out interpolating polynomial
 
     //cast vector1<double> to vector string
+
     std::vector<std::string> vector1String;
     for (const double& number: vector1)
     {
-        vector1String.push_back("x - " + std::to_string(number));
+        vector1String.push_back("(x - " + std::to_string(number) + ")");
     }
 
     //print out the vector1String for now.
+    std::cout << "print out the vector1String for now." << std::endl;
     for(const auto& str: vector1String)
     {
         std::cout << str << std::endl;
+    }
+
+    //print out the first element of each vector (from vector 2 to vector 5)
+    std::vector<std::vector<double>> vectorList;
+    vectorList.push_back(vector2);
+    vectorList.push_back(vector3);
+    vectorList.push_back(vector4);
+    vectorList.push_back(vector5);
+
+    //create a new vector that stores only first elements from vector 2 to vector 5
+    std::vector<double> firstElement;
+
+    for (const auto& vec: vectorList)
+    {
+        firstElement.push_back(vec[0]);
+    }
+
+    //print out first element
+    std::cout << "Testing--print out first element of each neccessary vector." << std::endl;
+    for (const auto& number: firstElement)
+    {
+        std::cout << number <<std::endl;
+    }
+
+    //print out interpolating polynomial
+    std::cout << "Print out interpolating polynomial--testing" << std::endl;
+    std::cout << firstElement[0];
+    for(size_t i = 1; i < firstElement.size(); ++i)
+    {
+        std::cout << " + " << firstElement[i] << vector1String[i-1];
     }
 
     //create a vector that has the format (x-value)
