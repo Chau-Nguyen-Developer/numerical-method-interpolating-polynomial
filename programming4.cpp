@@ -1,6 +1,6 @@
 //PROGRAMMER: Ngoc Chau Nguyen
 //DATE: 2025-04-23
-//DESCRIPTION: This program is a simple C++ program that prints "Hello, World!" to the console.
+//DESCRIPTION: Placeholder
 //ASSISTANT: CHAT GPT and classmate Jasper Liu
 
 #include <iostream> //do I need it?
@@ -18,6 +18,7 @@ int main()
     std::vector<double> vector1;
     std::vector<double> vector2;
 
+    int count = 0;
 
     if(inputFile.is_open())
     {
@@ -33,6 +34,7 @@ int main()
             while(ss >> number)
             {
                 vector1.push_back(number);
+                ++count;
             }
 
         }
@@ -56,7 +58,7 @@ int main()
     }
 
     //Print out vectors to check. 
-    std::cout << "x         f[]         f[,]        f[, ,]" << std::endl;
+    std::cout << "x         f[]         f[,]        f[, ,]      " << std::endl;
 
     for(size_t i = 0; i < vector1.size(); ++i)
     {
@@ -91,14 +93,57 @@ int main()
        std::cout << vector5[i-1] << std::endl;
     }
     
-    std::cout << "Print out first part";
-    std::cout << (vector4[1] - vector4[0]) << std::endl;
+    //print out interpolating polynomial
 
-    //print out second part
-    std::cout << "Print out second part." << std::endl;
-    std::cout << (vector1[3] - vector1[0]);
+    //cast vector1<double> to vector string
 
-    
+    std::vector<std::string> vector1String;
+    for (const double& number: vector1)
+    {
+        vector1String.push_back("(x - " + std::to_string(number) + ")");
+    }
+
+    //print out the vector1String for now.
+    std::cout << "print out the vector1String for now." << std::endl;
+    for(const auto& str: vector1String)
+    {
+        std::cout << str << std::endl;
+    }
+
+    //print out the first element of each vector (from vector 2 to vector 5)
+    std::vector<std::vector<double>> vectorList;
+    vectorList.push_back(vector2);
+    vectorList.push_back(vector3);
+    vectorList.push_back(vector4);
+    vectorList.push_back(vector5);
+
+    //create a new vector that stores only first elements from vector 2 to vector 5
+    std::vector<double> firstElement;
+
+    for (const auto& vec: vectorList)
+    {
+        firstElement.push_back(vec[0]);
+    }
+
+    //print out first element
+    std::cout << "Testing--print out first element of each neccessary vector." << std::endl;
+    for (const auto& number: firstElement)
+    {
+        std::cout << number <<std::endl;
+    }
+
+    //print out interpolating polynomial
+    std::cout << "Print out interpolating polynomial--testing" << std::endl;
+    std::cout << firstElement[0];
+    for(size_t i = 1; i < firstElement.size(); ++i)
+    {
+        std::cout << " + " << firstElement[i];
+        for(size_t j = 0; j < i; ++j)
+        {
+            std::cout <<vector1String[j];
+        } 
+    }
+
 
     return 0;
 
