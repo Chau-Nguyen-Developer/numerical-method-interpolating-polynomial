@@ -144,7 +144,11 @@ int main()
     std::cout << firstElement[0];
     for(size_t i = 1; i < firstElement.size(); ++i)
     {
-        std::cout << " + " << firstElement[i] << vector1String[i-1];
+        std::cout << " + " << firstElement[i];
+        for(size_t j = 0; j < i; ++j)
+        {
+            std::cout <<vector1String[j];
+        } 
     }
 
     //create a vector that has the format (x-value)
